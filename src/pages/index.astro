@@ -1,181 +1,321 @@
 ---
-const DONATE_URL = 'https://YOUR_DONATION_LINK_HERE'; // TODO: set your donation link
+const DONATE_URL = 'https://donate.stripe.com/14A5kC5X02Sk1bu1Engbm00'; // TODO: set your donation link
 const CONTACT_EMAIL = 'chris@ballforbloomfield.com'; // TODO: confirm email
 ---
 
 <astro:head>
-  <!-- ...existing meta... -->
-  <meta property="og:title" content="Ball for Bloomfield — Chris Ball for Mayor" />
-  <meta property="og:description" content="Practical leadership through strong partnerships. Let’s fix the basics and dream together." />
-  <meta property="og:image" content="/images/logo.png" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
+    <!-- ...existing meta... -->
+    <meta property="og:title" content="Ball for Bloomfield — Chris Ball for Mayor" />
+    <meta property="og:description" content="Practical leadership through strong partnerships. Let’s fix the basics and dream together." />
+    <meta property="og:image" content="/images/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
 </astro:head>
 
 <!-- HERO -->
 <header class="hero" role="banner">
-  <div class="wrap">
-    <img src="/images/logo.png" alt="Ball for Bloomfield Logo" class="hero-logo" />
-    <h1 class="title">Brilliant Bloomfield - celebrating today, shaping tomorrow.</h1>
-    <p class="tag">Practical leadership. Strong basics. Community pride.</p>
-    <nav class="cta" aria-label="Primary">
-      <a class="btn primary" href="#volunteer">Volunteer</a>
-      <a class="btn" href={DONATE_URL}>Contribute</a>
-    </nav>
-  </div>
+    <div class="wrap">
+        <img src="/images/logo.png" alt="Ball for Bloomfield Logo" class="hero-logo" />
+        <h1 class="title">Bloomfield works best when we work together.</h1>
+        <p class="tag">Practical leadership. Strong basics. Community pride.</p>
+        <nav class="cta" aria-label="Primary">
+            <a class="btn primary" href="#sign">Request a sign</a>
+            <a class="btn" href={DONATE_URL}>Contribute</a>
+        </nav>
+    </div>
 </header>
 
 <main id="main" tabindex="-1">
-  <!-- PRIORITIES -->
-  <section id="priorities" class="section alt" aria-labelledby="priorities-heading">
-    <div class="wrap">
-      <h2 id="priorities-heading" class="section-title">Priorities</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Strong Infrastructure</h3>
-          <p>Modernize electric, water, and sewer using state & federal funding so we stop wasting money on outdated systems.</p>
-        </article>
-        <article class="card">
-          <h3>Downtown & Housing</h3>
-          <p>Keep the square vibrant and add homes for families through city-business-Main Street partnerships.</p>
-        </article>
-        <article class="card">
-          <h3>Efficiency & Resilience</h3>
-          <p>Cut waste, strengthen the grid, and prepare for storms - preventative maintenance for the whole town.</p>
-        </article>
-        <article class="card">
-          <h3>Dream Together & Involve Youth</h3>
-          <p>Invite the whole community - especially our youth - to help shape Bloomfield’s future and make good ideas real.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+    <!-- PRIORITIES -->
+    <section id="priorities" class="section alt" aria-labelledby="priorities-heading">
+        <div class="wrap">
+            <h2 id="priorities-heading" class="section-title">Priorities</h2>
+            <div class="cards">
+                <article class="card">
+                    <h3>Strong Infrastructure</h3>
+                    <p>Modernize electric, water, and sewer using state & federal funding so we stop wasting money on outdated systems.</p>
+                </article>
+                <article class="card">
+                    <h3>Downtown & Housing</h3>
+                    <p>Keep the square vibrant and add homes for families through city–business–Main Street partnerships.</p>
+                </article>
+                <article class="card">
+                    <h3>Efficiency & Resilience</h3>
+                    <p>Cut waste, strengthen the grid, and prepare for storms – preventative maintenance for the whole town.</p>
+                </article>
+                <article class="card">
+                    <h3>Dream Together & Involve Youth</h3>
+                    <p>Invite the whole community – especially our youth – to help shape Bloomfield’s future and make good ideas real.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section" aria-labelledby="about-heading">
-    <div class="wrap narrow about-grid">
-      <img
-        src="/images/chris.png"
-        alt="Chris Ball in Bloomfield"
-        class="headshot"
-        width="600"
-        height="600"
-        loading="lazy"
-        decoding="async"
-      />
-      <div>
-        <h2 id="about-heading" class="section-title">About Chris</h2>
-        <p>
-          Bloomfield is my home of choice. I've lived in Davis County since 2000, raised my family here, and worked with
-          our community to bring in resources that make a real difference. I believe small towns win through partnerships -
-          pooling our creative, technical, and financial strengths.
-        </p>
-        <p>
-          I learned that early. At age 10 in Nichols, Iowa, I was a founding youth member of the Nichols Community Club -
-          kids sat at the same table as adults and voted. That experience cemented two ideas I carry today: everyone has
-          gifts to share, and youth deserve a seat at the table.
-        </p>
-      </div>
-    </div>
-  </section>
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+        <div class="wrap narrow about-grid">
+            <img src="/images/chris.png" alt="Chris Ball in Bloomfield" class="headshot" width="600" height="600" loading="lazy" decoding="async" />
+            <div>
+                <h2 id="about-heading" class="section-title">About Chris</h2>
+                <p>
+                    Bloomfield is my home of choice. I've lived in Davis County since 2000, raised my family here, and worked with our community to bring in
+                    resources that make a real difference. I believe small towns win through partnerships - pooling our creative, technical, and financial
+                    strengths.
+                </p>
+                <p>
+                    I learned that early. At age 10 in Nichols, Iowa, I was a founding youth member of the Nichols Community Club - kids sat at the same table
+                    as adults and voted. That experience cemented two ideas I carry today: everyone has gifts to share, and youth deserve a seat at the table.
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <!-- VOLUNTEER (Netlify Forms) -->
-  <section id="volunteer" class="section alt" aria-labelledby="volunteer-heading">
-    <div class="wrap narrow">
-      <h2 id="volunteer-heading" class="section-title">Volunteer</h2>
-      <form name="volunteer" method="POST" data-netlify="true" class="form" aria-describedby="privacy-note">
-        <input type="hidden" name="form-name" value="volunteer" />
-        <label class="sr-only" for="v-name">Name</label>
-        <input id="v-name" name="name" placeholder="Name" required />
+    <!-- SIGN REQUEST (Netlify Forms) -->
+    <section id="sign" class="section alt" aria-labelledby="sign-heading">
+        <div class="wrap narrow">
+            <h2 id="sign-heading" class="section-title">Request a Sign</h2>
+            <form name="sign-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="form" aria-describedby="privacy-note">
+                <input type="hidden" name="form-name" value="sign-request" />
+                <p class="sr-only">
+                    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                </p>
 
-        <label class="sr-only" for="v-email">Email</label>
-        <input id="v-email" type="email" name="email" placeholder="Email" required />
+                <label class="sr-only" for="sr-name">Name</label>
+                <input id="sr-name" name="name" placeholder="Name" required />
 
-        <label class="sr-only" for="v-phone">Phone</label>
-        <input id="v-phone" name="phone" placeholder="Phone (optional)" />
+                <label class="sr-only" for="sr-address">Address</label>
+                <textarea id="sr-address" name="address" rows="3" placeholder="Street, City, State, ZIP" required></textarea>
 
-        <label class="sr-only" for="v-msg">Message</label>
-        <textarea id="v-msg" name="message" rows="4" placeholder="How can you help?"></textarea>
+                <label class="sr-only" for="sr-phone">Phone</label>
+                <input id="sr-phone" name="phone" placeholder="Phone" required />
 
-        <button type="submit" class="btn primary">Sign Up</button>
-        <p id="privacy-note" class="small">We'll never share your info. Paid for by Ball for Bloomfield.</p>
-      </form>
-    </div>
-  </section>
+                <label class="sr-only" for="sr-email">Email</label>
+                <input id="sr-email" type="email" name="email" placeholder="Email" required />
 
-  <!-- CONTACT -->
-  <section id="contact" class="section" aria-labelledby="contact-heading">
-    <div class="wrap narrow">
-      <h2 id="contact-heading" class="section-title">Contact</h2>
-      <p>
-        Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-        &middot; Facebook: <a href="https://facebook.com/YOURPAGE">YOURPAGE</a>
-      </p>
-    </div>
-  </section>
+                <button type="submit" class="btn primary">Send Request</button>
+                <p id="privacy-note" class="small">We’ll verify before delivery. We’ll never share your info. Paid for by Ball for Bloomfield.</p>
+            </form>
+        </div>
+    </section>
 
-  <!-- VISION NOTE -->
-  <section class="section alt" aria-label="Vision">
-    <div class="wrap narrow">
-      <p>
-        My vision is simple: fix what needs fixing, keep the basics strong, and create space for all of us - including our
-        youth - to dream about what's next. Bloomfield works best when we work together.
-      </p>
-    </div>
-  </section>
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+        <div class="wrap narrow">
+            <h2 id="contact-heading" class="section-title">Contact</h2>
+            <p>
+                Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+                &middot; Facebook: <a href="https://facebook.com/YOURPAGE">YOURPAGE</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- VISION NOTE -->
+    <section class="section alt" aria-label="Vision">
+        <div class="wrap narrow">
+            <p>
+                My vision is simple: fix what needs fixing, keep the basics strong, and create space for all of us - including our youth - to dream about what's
+                next. Bloomfield works best when we work together.
+            </p>
+        </div>
+    </section>
 </main>
 
 <footer class="footer" role="contentinfo">
-  <div class="wrap small">Paid for by Ball for Bloomfield • © {new Date().getFullYear()}</div>
+    <div class="wrap small">Paid for by Ball for Bloomfield • © {new Date().getFullYear()}</div>
 </footer>
 
 <style>
-  :root{--maroon:#660000;--ink:#0b1220;--muted:#5b6776;--bg:#ffffff;--surface:#f7f7f9;--max:1100px}
-  html{font:16px/1.5 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif}
-  body{margin:0;background:var(--bg);color:var(--ink)}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
-  .narrow{max-width:760px}
-  a{color:var(--maroon);text-decoration:none}
-  a:focus-visible, .btn:focus-visible, input:focus-visible, textarea:focus-visible{outline:3px solid #1e90ff;outline-offset:2px}
-  .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+    :root {
+        --maroon: #660000;
+        --ink: #0b1220;
+        --muted: #5b6776;
+        --bg: #ffffff;
+        --surface: #f7f7f9;
+        --max: 1100px;
+    }
+    html {
+        font:
+            16px/1.5 -apple-system,
+            BlinkMacSystemFont,
+            Segoe UI,
+            Roboto,
+            Helvetica,
+            Arial,
+            sans-serif;
+    }
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+    }
+    .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 18px;
+    }
+    .narrow {
+        max-width: 760px;
+    }
+    a {
+        color: var(--maroon);
+        text-decoration: none;
+    }
+    a:focus-visible,
+    .btn:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+        outline: 3px solid #1e90ff;
+        outline-offset: 2px;
+    }
+    .sr-only {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
 
-  /* Hero */
-  .hero-logo{max-width:320px;width:100%;margin-bottom:20px;display:block}
-  .about-grid{display:grid;gap:18px;align-items:start}
-  @media (min-width: 720px){
-    .about-grid{grid-template-columns:180px 1fr}
-  }
-  .headshot{width:100%;max-width:180px;height:auto;border-radius:12px;display:block}
+    /* Hero */
+    .hero-logo {
+        max-width: 320px;
+        width: 100%;
+        margin-bottom: 20px;
+        display: block;
+    }
+    .about-grid {
+        display: grid;
+        gap: 18px;
+        align-items: start;
+    }
+    @media (min-width: 720px) {
+        .about-grid {
+            grid-template-columns: 180px 1fr;
+        }
+    }
+    .headshot {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+        border-radius: 12px;
+        display: block;
+    }
 
-  .hero{background:var(--maroon);color:#fff;padding:64px 0 40px}
-  .title{font-size:clamp(1.8rem,4.5vw,3rem);margin:0 0 8px;font-weight:800}
-  .tag{margin:0 0 16px;color:#f1f5ff;opacity:.95}
-  .cta{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-block;border:2px solid #fff;border-radius:10px;padding:12px 16px;font-weight:700}
-  .btn.primary{background:#fff;color:var(--maroon)}
+    .hero {
+        background: var(--maroon);
+        color: #fff;
+        padding: 64px 0 40px;
+    }
+    .title {
+        font-size: clamp(1.8rem, 4.5vw, 3rem);
+        margin: 0 0 8px;
+        font-weight: 800;
+    }
+    .tag {
+        margin: 0 0 16px;
+        color: #f1f5ff;
+        opacity: 0.95;
+    }
+    .cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .btn {
+        display: inline-block;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        padding: 12px 16px;
+        font-weight: 700;
+        color: #fff;
+    }
+    .btn.primary {
+        background: #fff;
+        color: var(--maroon);
+    }
 
-  /* Sections */
-  .section{padding:56px 0}
-  .section.alt{background:var(--surface)}
-  .section-title{margin:0 0 16px;font-size:clamp(1.25rem,2.3vw,1.6rem)}
+    /* Sections */
+    .section {
+        padding: 56px 0;
+    }
+    .section.alt {
+        background: var(--surface);
+    }
+    .section-title {
+        margin: 0 0 16px;
+        font-size: clamp(1.25rem, 2.3vw, 1.6rem);
+    }
 
-  /* Cards */
-  .cards{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-  .card{background:#fff;border:1px solid #e6e6ef;border-radius:12px;padding:18px}
-  .card h3{margin:0 0 6px;font-size:1.1rem}
-  .card p{margin:0;color:#3c4658}
+    /* Cards */
+    .cards {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .card {
+        background: #fff;
+        border: 1px solid #e6e6ef;
+        border-radius: 12px;
+        padding: 18px;
+    }
+    .card h3 {
+        margin: 0 0 6px;
+        font-size: 1.1rem;
+    }
+    .card p {
+        margin: 0;
+        color: #3c4658;
+    }
 
-  /* Form */
-  .form{display:grid;gap:10px}
-  input,textarea{font:inherit;border:1px solid #cfd7e6;border-radius:10px;padding:11px 12px;width:100%}
-  button{cursor:pointer}
-  .small{color:var(--muted);font-size:.9rem}
+    /* Form */
+    .form {
+        display: grid;
+        gap: 10px;
+    }
+    input,
+    textarea {
+        font: inherit;
+        border: 1px solid #cfd7e6;
+        border-radius: 10px;
+        padding: 11px 12px;
+        width: 100%;
+    }
+    button {
+        cursor: pointer;
+    }
+    .small {
+        color: var(--muted);
+        font-size: 0.9rem;
+    }
 
-  /* Footer */
-  .footer{background:#f3f5fa;color:#3b4656;padding:28px 0}
+    /* Footer */
+    .footer {
+        background: #f3f5fa;
+        color: #3b4656;
+        padding: 28px 0;
+    }
 
-  /* Motion reduction */
-  @media (prefers-reduced-motion: reduce){
-    *{scroll-behavior:auto}
-  }
+    /* Motion reduction */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            scroll-behavior: auto;
+        }
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 480px) {
+        .hero {
+            padding: 40px 0 28px;
+        }
+        .section {
+            padding: 40px 0;
+        }
+        .cta .btn {
+            width: 100%;
+            text-align: center;
+        }
+        .cards {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

@@ -1,26 +1,115 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-const { title = 'Ball for Bloomfield — Chris Ball for Mayor' } = Astro.props;
+import BaseLayout from '../layouts/BaseLayout.astro';
+const DONATE_URL = 'https://donate.stripe.com/14A5kC5X02Sk1bu1Engbm00';
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{title}</title>
-        <meta property="og:title" content="Ball for Bloomfield — Chris Ball for Mayor" />
-        <meta property="og:description" content="Practical leadership through strong partnerships. Let’s fix the basics and dream together." />
-        <meta property="og:image" content="/images/logo.png" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="stylesheet" href="/styles/site.css" />
-    </head>
-    <body>
-        <Header />
-        <main id="main" tabindex="-1">
-            <slot />
-        </main>
-        <Footer />
-    </body>
-</html>
+<BaseLayout title="Ball for Bloomfield — Chris Ball for Mayor">
+    <!-- HERO -->
+    <header class="hero" role="banner">
+        <div class="wrap">
+            <h1 class="title">Bloomfield works best when we work together.</h1>
+            <p class="tag">Practical leadership. Strong basics. Community pride.</p>
+            <nav class="cta" aria-label="Primary">
+                <a class="btn primary" href="/#sign">Request a sign</a>
+                <a class="btn" href={DONATE_URL}>Contribute</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PRIORITIES -->
+    <section id="priorities" class="section alt" aria-labelledby="priorities-heading">
+        <div class="wrap">
+            <h2 id="priorities-heading" class="section-title">Priorities</h2>
+            <div class="cards">
+                <article class="card">
+                    <h3>Dream Together & Involve Youth</h3>
+                    <p>Invite the whole community – especially our youth – to help shape Bloomfield’s future and make good ideas real.</p>
+                </article>
+                <article class="card">
+                    <h3>Downtown & Housing</h3>
+                    <p>Keep the square vibrant and add homes for families through city–business–Main Street partnerships.</p>
+                </article>
+                <article class="card">
+                    <h3>Strong Infrastructure</h3>
+                    <p>Modernize electric, water, and sewer using state & federal funding so we stop wasting money on outdated systems.</p>
+                </article>
+                <article class="card">
+                    <h3>Efficiency & Resilience</h3>
+                    <p>Cut waste, strengthen the grid, and prepare for storms – preventative maintenance for the whole town.</p>
+                </article>
+            </div>
+            <p class="small" style="margin-top:16px"><a href="/priorities" class="link-more">See detailed priorities →</a></p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+        <div class="wrap narrow about-grid">
+            <img
+                src="/images/chris.png"
+                alt="Chris Ball in Bloomfield"
+                class="headshot"
+                width="800"
+                height="800"
+                srcset="/images/chris.png 400w, /images/chris.png 800w"
+                sizes="(max-width: 720px) 220px, 320px"
+                loading="lazy"
+                decoding="async"
+            />
+            <div>
+                <h2 id="about-heading" class="section-title">About Chris</h2>
+                <p>
+                    Bloomfield is my home of choice. I’ve lived in Davis County since 2000, raised my family here, and worked with our community to bring in
+                    resources that make a real difference. I believe small towns win through partnerships — pooling our creative, technical, and financial
+                    strengths.
+                </p>
+                <p>
+                    I learned that early. At age 10 in Nichols, Iowa, I was a founding youth member of the Nichols Community Club — kids sat at the same table
+                    as adults and voted. That experience cemented two ideas I carry today: everyone has gifts to share, and youth deserve a seat at the table.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGN REQUEST (Netlify Forms) -->
+    <section id="sign" class="section alt" aria-labelledby="sign-heading">
+        <div class="wrap narrow">
+            <h2 id="sign-heading" class="section-title">Request a Sign</h2>
+            <form
+                name="sign-request"
+                method="POST"
+                action="/thanks"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                class="form"
+                aria-describedby="privacy-note"
+            >
+                <input type="hidden" name="form-name" value="sign-request" />
+                <p class="sr-only"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
+
+                <label class="sr-only" for="sr-name">Name</label>
+                <input id="sr-name" name="name" placeholder="Name" required />
+
+                <label class="sr-only" for="sr-address">Address</label>
+                <textarea id="sr-address" name="address" rows="3" placeholder="Street, City, State, ZIP" required></textarea>
+
+                <label class="sr-only" for="sr-phone">Phone</label>
+                <input id="sr-phone" name="phone" placeholder="Phone" required />
+
+                <label class="sr-only" for="sr-email">Email</label>
+                <input id="sr-email" type="email" name="email" placeholder="Email" required />
+
+                <button type="submit" class="btn primary">Send Request</button>
+                <p id="privacy-note" class="small">We’ll verify before delivery.</p>
+            </form>
+
+            <!-- Inline thank-you message area (shown after submit via Netlify redirect to /) -->
+            <noscript
+                ><p class="small">
+                    Thank you for requesting a sign. We will call or email you to verify that you want the sign and that we have the correct address. Once we do
+                    that, we will place the sign in your yard and will remove it after election day.
+                </p></noscript
+            >
+        </div>
+    </section>
+</BaseLayout>

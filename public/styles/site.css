@@ -22,11 +22,11 @@ a:focus-visible,.btn:focus-visible,input:focus-visible,textarea:focus-visible{ou
   background:var(--maroon);color:#fff;border-bottom:8px solid #5a0000;
   padding-block: clamp(28px, 6.5vw, 56px); margin:0 0 var(--s-5);
 }
-.page-hero h1{margin:0;font-size:var(--fs-hero);font-weight:800}
+.page-hero h1{margin:0;font-size:var(--fs-hero);font-weight:800;color:#D3AF37;}
 
 .section{padding-block: clamp(36px, 7vw, 56px)}
 .section.alt{background:var(--surface)}
-.section-title{margin:0 0 var(--s-3);font-size:var(--fs-h2);font-weight:700}
+.section-title{margin:0 0 var(--s-3);font-size:var(--fs-h2);font-weight:700;color:#660000;}
 
 .cards{display:grid;gap:var(--s-3);grid-template-columns:1fr}
 @media (min-width: 720px){ .cards{grid-template-columns:repeat(2,1fr)} }
@@ -35,7 +35,7 @@ a:focus-visible,.btn:focus-visible,input:focus-visible,textarea:focus-visible{ou
 .card h3{margin:0 0 6px;font-size:1.1rem}
 .card p{margin:0;color:#3c4658}
 
-.footer{background:#f3f5fa;color:#3b4656;padding-block:28px}
+.footer{background:#D3AF37;color:#0b1220;padding-block:28px}
 @media (max-width: 480px){
   .section{padding-block:40px}
 }
@@ -52,4 +52,49 @@ a:focus-visible,.btn:focus-visible,input:focus-visible,textarea:focus-visible{ou
   .menu{display:none;flex-direction:column;align-items:flex-start;padding-block:8px}
   .menu.open{display:flex}
   .nav-toggle{display:inline-block}
+}
+
+.btn {
+  display:inline-block;
+  border:2px solid var(--maroon);
+  border-radius:10px;
+  padding:12px 20px;
+  font-weight:700;
+  text-decoration:none;
+  background:transparent;
+  color:var(--maroon);
+  transition:all 0.2s ease;
+}
+.btn:hover,
+.btn:focus {
+  background:var(--maroon);
+  color:#fff;
+}
+.btn.primary {
+  background:var(--maroon);
+  color:#fff;
+  border-color:var(--maroon);
+}
+.btn.primary:hover,
+.btn.primary:focus {
+  background:#fff;
+  color:var(--maroon);
+}
+/* Form styling */
+.form{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.form input,
+.form textarea{
+  font:inherit;
+  border:1px solid #cfd7e6;
+  border-radius:10px;
+  padding:12px;
+  width:100%;
+  box-sizing:border-box;
+}
+.form button{
+  align-self:flex-start;
 }

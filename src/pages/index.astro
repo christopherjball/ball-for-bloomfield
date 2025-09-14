@@ -74,7 +74,15 @@ const CONTACT_EMAIL = 'chris@ballforbloomfield.com'; // TODO: confirm email
     <section id="sign" class="section alt" aria-labelledby="sign-heading">
         <div class="wrap narrow">
             <h2 id="sign-heading" class="section-title">Request a Sign</h2>
-            <form name="sign-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="form" aria-describedby="privacy-note">
+            <form
+                name="sign-request"
+                method="POST"
+                action="/"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                class="form"
+                aria-describedby="privacy-note"
+            >
                 <input type="hidden" name="form-name" value="sign-request" />
                 <p class="sr-only">
                     <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>

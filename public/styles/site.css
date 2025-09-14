@@ -54,6 +54,20 @@ a:focus-visible,.btn:focus-visible,input:focus-visible,textarea:focus-visible{ou
   .nav-toggle{display:inline-block}
 }
 
+/* About headshot & grid */
+.headshot{
+  width: clamp(180px, 40vw, 320px);
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  height: auto;
+  border-radius: var(--radius);
+  display:block;
+}
+@media (min-width: 720px){
+  .about-grid{grid-template-columns: minmax(220px, 320px) 1fr}
+}
+
 .btn {
   display:inline-block;
   border:2px solid var(--maroon);

@@ -1,0 +1,30 @@
+---
+const DONATE_URL = 'https://donate.stripe.com/14A5kC5X02Sk1bu1Engbm00';
+---
+
+<header class="site-header">
+    <div class="wrap header-row">
+        <a href="/" class="brand">
+            <img src="/images/logo.png" alt="Ball for Bloomfield" class="logo" height="150" />
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
+        <nav id="site-menu" class="menu" aria-label="Main">
+            <a href="/about">About</a>
+            <a href="/priorities">Priorities</a>
+            <a href="/#sign">Request a sign</a>
+            <a href={DONATE_URL}>Contribute</a>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('site-menu');
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            menu.classList.toggle('open');
+        });
+    }
+</script>

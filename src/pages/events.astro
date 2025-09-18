@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Events — Ball for Bloomfield">
+    <section class="page-hero">
+        <div class="wrap"><h1>Events</h1></div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="section">
+        <div class="wrap narrow">
+            <h2 class="section-title">Upcoming</h2>
+            <!-- Add your events here as list items -->
+            <ul>
+                <li>
+                    <p>
+                        <strong>Cookies &amp; Conversation with Chris Ball</strong><br />
+                        <strong>Thursday, September 25 at 7:00 PM</strong><br />
+                        <strong>Bloomfield Public Library</strong>
+                    </p>
+                    <p>
+                        Join me next Thursday for Cookies &amp; Conversation at the Bloomfield Public Library. No formal presentation—just neighbors talking
+                        about our community over my daughter Julianna’s homemade cookies.
+                    </p>
+                    <p><a href="https://www.facebook.com/share/1CfXFrbnNN/" target="_blank" rel="noopener">RSVP on Facebook</a></p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Request a Meeting -->
+    <section class="section alt">
+        <div class="wrap narrow">
+            <h2 class="section-title">Request a Meeting</h2>
+            <form
+                name="event-request"
+                method="POST"
+                action="/thanks"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                class="form"
+                aria-describedby="request-note"
+            >
+                <input type="hidden" name="form-name" value="event-request" />
+                <p class="sr-only"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
+
+                <label class="sr-only" for="er-name">Name</label>
+                <input id="er-name" name="name" placeholder="Your name" required />
+
+                <label class="sr-only" for="er-org">Organization</label>
+                <input id="er-org" name="organization" placeholder="Organization (optional)" />
+
+                <label class="sr-only" for="er-email">Email</label>
+                <input id="er-email" type="email" name="email" placeholder="Email" required />
+
+                <label class="sr-only" for="er-phone">Phone</label>
+                <input id="er-phone" name="phone" placeholder="Phone" required />
+
+                <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">
+                    <div>
+                        <label class="sr-only" for="er-date">Meeting Date</label>
+                        <input id="er-date" type="date" name="meeting_date" />
+                    </div>
+                    <div>
+                        <label class="sr-only" for="er-time">Meeting Time</label>
+                        <input id="er-time" type="time" name="meeting_time" />
+                    </div>
+                </div>
+
+                <label class="sr-only" for="er-location">Location</label>
+                <input id="er-location" name="location" placeholder="Location / Address" />
+
+                <label class="sr-only" for="er-attendance">Expected Attendance</label>
+                <input id="er-attendance" name="attendance" placeholder="Expected attendance (optional)" />
+
+                <label class="sr-only" for="er-notes">Topic / Notes</label>
+                <textarea id="er-notes" name="notes" rows="4" placeholder="Topic and any details that would be helpful"></textarea>
+
+                <button type="submit" class="btn primary">Send Request</button>
+                <p id="request-note" class="small">We’ll follow up by phone or email to confirm details. We don’t sell or share your info.</p>
+            </form>
+        </div>
+    </section>
+</BaseLayout>

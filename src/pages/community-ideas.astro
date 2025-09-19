@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Ball for Bloomfield — Community Ideas">
+    <section class="page-hero">
+        <div class="wrap"><h1>Community Ideas</h1></div>
+    </section>
+
+    <section class="section">
+        <div class="wrap narrow">
+            <p>
+                <em
+                    >These are ideas I've heard while having conversations around town. Some come from business owners, others from families or students. I'm
+                    not looking to take credit — I want to get conversations going so we can continue to look for new ideas together.</em
+                >
+            </p>
+
+            <h3>Lake Fisher Task Force</h3>
+            <p>
+                Form a community-led group to explore trails, recreation improvements, annexation possibilities, and evaluate potential housing development
+                while being good stewards of the public resource.
+            </p>
+
+            <h3>Federal Tax Incentive Program</h3>
+            <p>
+                Use existing federal tax incentives to allow residents to donate toward public projects with a tax benefit, reducing pressure on city budgets.
+            </p>
+
+            <h3>Tool Library Expansion + Maker Space</h3>
+            <p>
+                Expand the existing tool library at the public library and explore adding maker space capabilities or a remote worker hub to support local
+                innovation and collaboration.
+            </p>
+
+            <h3>Industrial Park Development</h3>
+            <p>Explore expanding or relocating the industrial park to attract businesses and jobs that fit Bloomfield's strengths.</p>
+
+            <h3>Youth Entrepreneurship Support</h3>
+            <p>Incentivize young entrepreneurs through microgrants, simplified business licensing, or mentorship programs.</p>
+
+            <h3>Activate Empty Buildings</h3>
+            <p>Use temporary pop-ups, art installations, or other creative uses to keep empty commercial buildings active while seeking permanent tenants.</p>
+
+            <h3>Infrastructure Partnerships</h3>
+            <p>Leverage grant-writing experience to pursue joint projects with neighboring communities that could benefit everyone.</p>
+
+            <h3>Energy Efficiency Incentives</h3>
+            <p>Help residents and businesses access state and federal programs for energy improvements that reduce long-term costs.</p>
+
+            <h2 id="share-ideas-heading">Share Your Ideas</h2>
+            <p>Bloomfield works best when we work together. What ideas do you have for our community's future?</p>
+
+            <p><strong>Areas I'm especially interested in hearing about:</strong></p>
+            <ul>
+                <li>Economic development and job creation</li>
+                <li>Recreation and quality of life improvements</li>
+                <li>Infrastructure and efficiency opportunities</li>
+                <li>Ways to support our youth and families</li>
+                <li>Creative solutions to common small-town challenges</li>
+            </ul>
+
+            <form name="community-idea-submission" method="POST" data-netlify="true" action="/thanks" class="form" style="margin-top: 2rem;">
+                <input type="hidden" name="form-name" value="community-idea-submission" />
+                <p class="sr-only"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
+
+                <label for="idea-name" class="sr-only">Your Name</label>
+                <input id="idea-name" name="name" placeholder="Your Name" required />
+
+                <label for="idea-email" class="sr-only">Email</label>
+                <input id="idea-email" type="email" name="email" placeholder="Email" required />
+
+                <label for="idea-message" class="sr-only">Your Idea</label>
+                <textarea id="idea-message" name="message" rows="5" placeholder="Describe your idea..." required></textarea>
+
+                <button type="submit" class="btn primary">Submit Your Idea</button>
+            </form>
+
+            <p>
+                <em
+                    >Not every idea will be feasible, but every idea deserves consideration. As mayor, I'll evaluate suggestions based on community benefit,
+                    fiscal responsibility, and practical implementation — just like I've done with successful projects in the past.</em
+                >
+            </p>
+        </div>
+    </section>
+</BaseLayout>

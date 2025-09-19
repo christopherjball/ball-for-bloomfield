@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const url = new URL(Astro.request.url);
+const formType = url.searchParams.get('form-type');
 ---
 
 <BaseLayout title="Thank You — Ball for Bloomfield">
@@ -10,8 +13,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="section">
         <div class="wrap narrow">
             <p>
-                Thank you for requesting a sign. We will call or email you to verify that you want the sign and that we have the correct address. Once we do
-                that, we will place the sign in your yard and will remove it after election day.
+                {
+                    formType === 'sign-request'
+                        ? 'Thank you for requesting a yard sign! We’ll call or email to confirm your address before delivery.'
+                        : formType === 'event-request'
+                          ? 'Thank you for inviting Chris! We’ll follow up by phone or email to confirm details about your meeting.'
+                          : 'We’ve received your request and will be in touch soon.'
+                }
             </p>
             <p class="small">
                 Want to head back? <a class="link-more" href="/">Return to the homepage</a> ·

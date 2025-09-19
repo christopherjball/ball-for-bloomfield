@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const DONATE_URL = 'https://donate.stripe.com/14A5kC5X02Sk1bu1Engbm00';
+const DONATE_URL = 'https://donate.ballforbloomfield.com/b/14A5kC5X02Sk1bu1Engbm00';
 ---
 
 <BaseLayout title="Ball for Bloomfield — Chris Ball for Mayor">
@@ -9,9 +9,18 @@ const DONATE_URL = 'https://donate.stripe.com/14A5kC5X02Sk1bu1Engbm00';
         <div class="wrap">
             <h1 class="title">Bloomfield works better when we work together.</h1>
             <p class="tag">Practical leadership. Strong basics. Community pride.</p>
-            <nav class="cta" aria-label="Primary">
+            <nav class="cta" aria-label="Primary" style="display:flex; flex-wrap:nowrap; align-items:center; gap:12px;">
                 <a class="btn primary" href="/#sign">Request a sign</a>
                 <a class="btn" href={DONATE_URL}>Contribute</a>
+                <a
+                    href="https://www.facebook.com/BallForBloomfield/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Follow on Facebook"
+                    style="display:flex; align-items:center; justify-content:center; height:44px; width:44px; padding:0; border:none; background:none;"
+                >
+                    <img src="/images/facebook-icon.png" alt="Facebook" style="display:block; max-height:100%; max-width:100%; border:none;" />
+                </a>
             </nav>
         </div>
     </header>

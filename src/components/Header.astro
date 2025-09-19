@@ -1,5 +1,11 @@
 ---
 const DONATE_URL = 'https://donate.ballforbloomfield.com/b/14A5kC5X02Sk1bu1Engbm00';
+
+const path = Astro.url.pathname;
+const isActive = (href) => {
+    if (href === '/') return path === '/';
+    return path.startsWith(href);
+};
 ---
 
 <header class="site-header">
@@ -9,12 +15,18 @@ const DONATE_URL = 'https://donate.ballforbloomfield.com/b/14A5kC5X02Sk1bu1Engbm
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
         <nav id="site-menu" class="menu" aria-label="Main">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/priorities">Priorities</a>
-            <a href="/results">Results</a>
-            <a href="/events">Events</a>
-            <a href="/community-ideas">Community Ideas</a>
+            <a href="/" class={isActive('/') ? 'active' : undefined} aria-current={isActive('/') ? 'page' : undefined}>Home</a>
+            <a href="/about" class={isActive('/about') ? 'active' : undefined} aria-current={isActive('/about') ? 'page' : undefined}>About</a>
+            <a href="/priorities" class={isActive('/priorities') ? 'active' : undefined} aria-current={isActive('/priorities') ? 'page' : undefined}
+                >Priorities</a
+            >
+            <a href="/results" class={isActive('/results') ? 'active' : undefined} aria-current={isActive('/results') ? 'page' : undefined}>Results</a>
+            <a href="/events" class={isActive('/events') ? 'active' : undefined} aria-current={isActive('/events') ? 'page' : undefined}>Events</a>
+            <a
+                href="/community-ideas"
+                class={isActive('/community-ideas') ? 'active' : undefined}
+                aria-current={isActive('/community-ideas') ? 'page' : undefined}>Community Ideas</a
+            >
             <!-- ← new -->
             <a href="/#sign">Request a sign</a>
             <a href={DONATE_URL}>Contribute</a>
@@ -36,5 +48,14 @@ const DONATE_URL = 'https://donate.ballforbloomfield.com/b/14A5kC5X02Sk1bu1Engbm
 <style>
     nav.menu a:hover {
         color: #ffd700;
+    }
+    nav.menu a.active {
+        color: #ffd700;
+        border-bottom: 2px solid #ffd700;
+    }
+    nav.menu a:focus-visible {
+        outline: 2px solid #ffd700;
+        outline-offset: 2px;
+        border-radius: 4px;
     }
 </style>
